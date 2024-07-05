@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import 'aframe'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { getLinks } from '../services/subabase/db.service'
 import { Link } from '../utils/general.type'
 
-const Show = () => {
+const Show = ({ isQ }: { isQ?: boolean }) => {
   const [image, setImage] = useState<string>('')
+  const [searchParams] = useSearchParams()
+
   //const fileInputRef = useRef<HTMLInputElement>(null)
   const skyRef = useRef<HTMLElement | null>(null)
   const { id } = useParams()
@@ -14,8 +16,13 @@ const Show = () => {
 
   useEffect(() => {
     if (skyRef.current) {
-      console.log('IMAGE', image)
-      skyRef.current.setAttribute('src', image)
+      let img = image
+      if (isQ) {
+        const url = searchParams.get('url')
+        if (url) img = url
+      }
+      console.log('IMAGE', img)
+      skyRef.current.setAttribute('src', img)
     }
   }, [image])
 
@@ -25,7 +32,7 @@ const Show = () => {
         console.log('DATA', data)
         const selectedLink = data.find((link) => String(link.name) === id)
         console.log('SEL', selectedLink)
-        if (!selectedLink) navigate('/error')
+        if (!selectedLink && !isQ) navigate('/error')
         if (selectedLink) setImage(selectedLink.url)
       }
     })

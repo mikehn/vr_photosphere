@@ -24,6 +24,10 @@ const router = createBrowserRouter([
     element: <Show />
   },
   {
+    path: '/q',
+    element: <Show isQ={true} />
+  },
+  {
     path: '*',
     element: <ErrorPage />
   }
