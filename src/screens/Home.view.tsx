@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getLinks } from '../services/subabase/db.service'
+import SlideDownImage from '../components/SlideDownImage.component'
 
 interface Image {
   id: number
@@ -32,7 +33,7 @@ const LinksGrid: React.FC = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 to-pink-300 p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 to-pink-500 p-4 sm:p-8">
       <div className="mx-auto max-w-7xl">
         <h1 className="mb-6 text-center text-3xl font-bold text-white sm:mb-8 sm:text-4xl">
           {"Vered's Gallery"}
@@ -47,6 +48,12 @@ const LinksGrid: React.FC = () => {
           ))}
         </div>
       </div>
+      <SlideDownImage altText="home" imageSrc="/home.png" className="right-0" />
+      {/* <img
+        src="/home.png"
+        alt="error"
+        className="fixed bottom-0 right-0 h-20 md:h-60"
+      /> */}
     </div>
   )
 }

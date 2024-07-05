@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SlideDownImage from '../components/SlideDownImage.component'
 
 const ErrorPage = () => {
   return (
@@ -32,6 +33,7 @@ const ErrorPage = () => {
           </button>
         </Link>
       </div>
+      <SlideDownImage altText="home" imageSrc="/error.png" />
     </div>
   )
 }
