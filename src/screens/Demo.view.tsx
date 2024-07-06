@@ -34,7 +34,7 @@ const Demo = () => {
   }
 
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-screen flex-col" key={image}>
       <div className="relative flex-1">
         {/*eslint-disable-next-line @typescript-eslint/ban-ts-comment*/}
         {/*@ts-expect-error*/}
