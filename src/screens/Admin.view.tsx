@@ -155,6 +155,7 @@ const AdminPage: React.FC = () => {
               </div>
               <div>
                 <ImageLink
+                  key={link.url}
                   altText={link.name}
                   imageSrc={link.url}
                   linkTo={`/show/${link.name}`}
