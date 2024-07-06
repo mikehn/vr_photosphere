@@ -33,7 +33,7 @@ const ImageLink: React.FC<ImageLinkProps> = ({ imageSrc, altText, linkTo }) => {
             src={imageSrc}
             alt={altText}
             onError={() => setIsError(true)}
-            className="h-40 w-full rounded-md object-cover transition-transform duration-300 group-hover:scale-110"
+            className="h-52 w-full rounded-md object-cover transition-transform duration-300 group-hover:scale-110"
           />
           <div
             className={`absolute inset-0 flex items-center justify-center rounded-md bg-black/50 transition-opacity duration-300 ${
