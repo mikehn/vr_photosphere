@@ -35,7 +35,7 @@ const LinksGrid: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-600 to-pink-500 p-4 sm:p-8">
       <div className="mx-auto max-w-7xl">
-        <h1 className="mb-6 text-center text-3xl font-bold text-white sm:mb-8 sm:text-4xl">
+        <h1 className="font-main mb-6 text-center text-3xl font-bold text-white sm:mb-8 sm:text-5xl">
           {"Vered's Gallery"}
         </h1>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">

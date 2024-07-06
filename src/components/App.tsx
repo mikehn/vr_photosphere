@@ -5,6 +5,7 @@ import Show from 'screens/Show.view'
 import AdminPage from '../screens/Admin.view'
 import ErrorPage from '../screens/Error.view'
 import Home from '../screens/Home.view'
+import './global.style.css'
 
 const router = createBrowserRouter([
   {
