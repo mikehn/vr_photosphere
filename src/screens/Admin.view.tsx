@@ -68,7 +68,7 @@ const AdminPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen w-full items-center justify-center bg-gradient-to-br from-purple-400 to-pink-300 p-8">
+    <div className="min-h-screen w-full items-center justify-center bg-gradient-to-br from-purple-600 to-pink-400 p-8">
       <div className="mx-auto flex w-fit gap-4">
         <h1 className="mb-6 text-center text-3xl font-bold text-purple-700">
           Admin Page
