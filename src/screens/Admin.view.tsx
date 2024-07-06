@@ -78,6 +78,11 @@ const AdminPage: React.FC = () => {
             Home
           </button>
         </LinkR>
+        <LinkR to="/demo">
+          <button className="mb-6 w-20 rounded-lg bg-purple-800 px-4 py-2 text-white transition-colors hover:bg-pink-600">
+            Test
+          </button>
+        </LinkR>
       </div>
       <div className="mx-auto max-w-lg rounded-lg bg-white p-6 shadow-lg">
         <div className="mb-4">
