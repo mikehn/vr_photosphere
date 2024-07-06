@@ -110,49 +110,51 @@ const AdminPage: React.FC = () => {
         </button>
       </div>
       <div className="mx-auto mt-8 max-w-lg">
-        {links.reverse().map((link) => (
-          <div
-            key={link.id}
-            className="mb-4 flex flex-col rounded-lg bg-white p-4 shadow-lg"
-          >
-            <div className="flex items-center justify-between">
-              <div className="truncate">
-                <p className="text-lg font-semibold text-purple-700">
-                  {link.name}
-                </p>
-                <a
-                  href={link.url}
-                  className="text-purple-500"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.url}
-                </a>
+        {links
+          .sort((a, b) => (Number(b.id) || 0) - (Number(a.id) || 0))
+          .map((link) => (
+            <div
+              key={link.id}
+              className="mb-4 flex flex-col rounded-lg bg-white p-4 shadow-lg"
+            >
+              <div className="flex items-center justify-between">
+                <div className="truncate">
+                  <p className="text-lg font-semibold text-purple-700">
+                    {link.name}
+                  </p>
+                  <a
+                    href={link.url}
+                    className="text-purple-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.url}
+                  </a>
+                </div>
+                <div className="ml-4 mt-4 flex space-x-2">
+                  <button
+                    onClick={() => editLink(link)}
+                    className="rounded-lg bg-purple-500 px-2 py-1 text-white transition-colors hover:bg-purple-600"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => deleteLink(link.id)}
+                    className="rounded-lg bg-red-500 px-2 py-1 text-white transition-colors hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
-              <div className="ml-4 mt-4 flex space-x-2">
-                <button
-                  onClick={() => editLink(link)}
-                  className="rounded-lg bg-purple-500 px-2 py-1 text-white transition-colors hover:bg-purple-600"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => deleteLink(link.id)}
-                  className="rounded-lg bg-red-500 px-2 py-1 text-white transition-colors hover:bg-red-600"
-                >
-                  Delete
-                </button>
+              <div>
+                <ImageLink
+                  altText={link.name}
+                  imageSrc={link.url}
+                  linkTo={`/show/${link.name}`}
+                />
               </div>
             </div>
-            <div>
-              <ImageLink
-                altText={link.name}
-                imageSrc={link.url}
-                linkTo={`/show/${link.name}`}
-              />
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
       <SlideDownImage
         altText="home"
