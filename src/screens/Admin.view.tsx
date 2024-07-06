@@ -69,20 +69,22 @@ const AdminPage: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full items-center justify-center bg-gradient-to-br from-purple-600 to-pink-400 p-8">
-      <div className="mx-auto flex w-fit gap-4">
-        <h1 className="mb-6 text-center text-3xl font-bold text-purple-100">
+      <div className="mx-auto flex w-fit flex-col gap-4 md:flex-row">
+        <h1 className="mb-0 w-full text-center text-3xl font-bold text-purple-100 md:mb-6">
           Admin Page
         </h1>
-        <LinkR to="/">
-          <button className="mb-6 w-20 rounded-lg bg-purple-800 px-4 py-2 text-white transition-colors hover:bg-pink-600">
-            Home
-          </button>
-        </LinkR>
-        <LinkR to="/demo">
-          <button className="mb-6 w-20 rounded-lg bg-purple-800 px-4 py-2 text-white transition-colors hover:bg-pink-600">
-            Test
-          </button>
-        </LinkR>
+        <div className="flex gap-4">
+          <LinkR to="/">
+            <button className="mb-6 w-20 rounded-lg bg-purple-800 px-4 py-2 text-white transition-colors hover:bg-pink-600">
+              Home
+            </button>
+          </LinkR>
+          <LinkR to="/demo">
+            <button className="mb-6 w-20 rounded-lg bg-purple-800 px-4 py-2 text-white transition-colors hover:bg-pink-600">
+              Test
+            </button>
+          </LinkR>
+        </div>
       </div>
       <div className="mx-auto max-w-lg rounded-lg bg-white p-6 shadow-lg">
         <div className="mb-4">
